@@ -1,0 +1,78 @@
+{
+	"info": {
+		"_postman_id": "6b3f4c29-51d0-41a7-add0-d8fffb659694",
+		"name": "AIA TPS - Prepaid",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ADHPrepaidSubscription",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "211ef650-b394-43eb-8b3d-c00ca526dfc8",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Response Status\",function(){",
+							"",
+							"    const responseJson = xml2Json(pm.response.text());",
+							"",
+							"    pm.expect(responseJson.PontisResponse.status.success).to.eql(\"true\")",
+							"",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<PontisRequest username=\"{{u}}\" password=\"{{p}}\" service=\"PXAExternalService\" operation=\"runCommand\" instance=\"PXARunCommandRequest\">\r\n    <!--<requestTime>2018-08-15T10:30:26</requestTime>-->\r\n   <command instance=\"PXARunEventCommand\">\r\n      <request instance=\"ReportRequest\">\r\n         <subscriberIdData instance=\"SubscriberId\">\r\n         <pontisId>PrepaidSubscription-{{subscriberid}}_2023-02-13</pontisId>\r\n         <subscriberId>{{subscriberid}}</subscriberId>\r\n         </subscriberIdData>\r\n         <eventData instance=\"pldt_smart.setup:ADHPrepaidSubscription\">\r\n         <brand>PrepaidSubscription</brand>\r\n         <activationDate>2023-02-13T10:30:26</activationDate>\r\n         <adhSystemOperationTime>2022-10-14T10:30:26</adhSystemOperationTime>\r\n         <prepaidSubscriptionId>{{subscriberid}}</prepaidSubscriptionId>\r\n         <slcState>Active</slcState>\r\n         <source>internal</source>\r\n         </eventData>\r\n      </request>\r\n      <recordArtifacts>true</recordArtifacts>\r\n   </command>\r\n</PontisRequest>"
+				},
+				"url": {
+					"raw": "https://{{server}}:8443/amdocs-digital-intelligence/newxml",
+					"protocol": "https",
+					"host": [
+						"{{server}}"
+					],
+					"port": "8443",
+					"path": [
+						"amdocs-digital-intelligence",
+						"newxml"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "7ff39930-7cc7-435c-a190-9f028b553a43",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "8bd2bab9-c54e-4566-b819-877d2a68ae24",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
