@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "1a6be373-df38-4d42-b7ea-0de47aa49e73",
+		"name": "GEO LOC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Geo Loc",
+			"item": [
+				{
+					"name": "PrepaidSubscriptionEvent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<PontisRequest username=\"PontisAdmin\" password=\"pass\" service=\"PXAExternalService\" operation=\"runCommand\" instance=\"PXARunCommandRequest\">\r\n    <!-- <requestTime>2022-09-21T10:30:26</requestTime> -->\r\n   <command instance=\"PXARunEventCommand\">\r\n      <request instance=\"ReportRequest\">\r\n         <subscriberIdData instance=\"SubscriberId\">\r\n         <pontisId>PrepaidSubscription-0012345671197_2022-09-21</pontisId>\r\n         <subscriberId>0012345671197</subscriberId>\r\n         </subscriberIdData>\r\n         <eventData instance=\"pldt_smart.setup:ADHPrepaidSubscription\">\r\n         <brand>PrepaidSubscription</brand>\r\n         <activationDate>2022-09-21T10:30:26</activationDate>\r\n         <adhSystemOperationTime>2022-09-21T10:30:26</adhSystemOperationTime>\r\n         <prepaidSubscriptionId>0012345671197</prepaidSubscriptionId>\r\n         <slcState>Active</slcState>\r\n         <source>GeoLoc</source>\r\n         </eventData>\r\n      </request>\r\n      <recordArtifacts>true</recordArtifacts>\r\n   </command>\r\n</PontisRequest>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://illinhdop11:8080/amdocs-digital-intelligence/newxml",
+							"protocol": "http",
+							"host": [
+								"illinhdop11"
+							],
+							"port": "8080",
+							"path": [
+								"amdocs-digital-intelligence",
+								"newxml"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PrepaidInboundGetMenuPldtEvent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<PontisRequest username=\"PontisAdmin\" password=\"pass\" service=\"PXAExternalService\" operation=\"runCommand\" instance=\"PXARunCommandRequest\">\r\n    <!--<requestTime>2018-08-15T10:30:26</requestTime>-->\r\n   <command instance=\"PXARunEventCommand\">\r\n      <request instance=\"ReportRequest\">\r\n         <subscriberIdData instance=\"SubscriberId\">\r\n         <pontisId>PrepaidSubscription-0012345671197_2022-09-21</pontisId>\r\n         <subscriberId>0012345671197</subscriberId>\r\n         </subscriberIdData>\r\n         <eventData instance=\"pldt_smart.setup:PrepaidInboundGetMenuPldtEvent\">\r\n         <channel>USSD_Retailer</channel>\r\n        </eventData>\r\n      </request>\r\n      <recordArtifacts>true</recordArtifacts>\r\n   </command>\r\n</PontisRequest>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://illinhdop11:8080/amdocs-digital-intelligence/newxml",
+							"protocol": "http",
+							"host": [
+								"illinhdop11"
+							],
+							"port": "8080",
+							"path": [
+								"amdocs-digital-intelligence",
+								"newxml"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProposals",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/html",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:v2=\"http://www.amdocs.com/engage/integration/nbo/v2\" xmlns:v6=\"http://www.amdocs.com/engage/integration/common/integration-common/v6\">\r\n    <soapenv:Header/>\r\n    <soapenv:Body>\r\n        <v2:GetProposals>\r\n            <v6:SessionId>13456</v6:SessionId>\r\n            <v6:Channel>USSD_Consumer</v6:Channel>\r\n            <!--Optional:-->\r\n            <v6:Language>en</v6:Language>\r\n            <!--Optional:-->\r\n            <v6:AdditionalInfo>\r\n                <v6:Parameter>\r\n                    <v6:Name>LAC</v6:Name>\r\n                    <v6:Value>2</v6:Value>\r\n                </v6:Parameter>\r\n                <v6:Parameter>\r\n                    <v6:Name>CI</v6:Name>\r\n                    <v6:Value>2</v6:Value>\r\n                </v6:Parameter>\r\n            </v6:AdditionalInfo>\r\n            <Profiles>\r\n                <Profile>\r\n                    <v6:Type>PrepaidSubscription</v6:Type>\r\n                    <!--Optional:-->\r\n                    <v6:IdType>MSISDN</v6:IdType>\r\n                    <v6:Id>8521868721</v6:Id>\r\n                </Profile>\r\n            </Profiles>\r\n            <!--Optional:-->\r\n            <Context>AlertBell</Context>\r\n            <!--Optional:-->\r\n            <MaxRetrievedProposals>1000</MaxRetrievedProposals>\r\n        </v2:GetProposals>\r\n    </soapenv:Body>\r\n</soapenv:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://illinhdop11:8080/amdocs-digital-intelligence/services2/NBO2",
+							"protocol": "http",
+							"host": [
+								"illinhdop11"
+							],
+							"port": "8080",
+							"path": [
+								"amdocs-digital-intelligence",
+								"services2",
+								"NBO2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
