@@ -1,0 +1,331 @@
+{
+	"info": {
+		"_postman_id": "f42faf7e-d121-405e-b0d7-084f2f99671b",
+		"name": "3D",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CsrGetExperienceFullDetailsRequest",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<PontisRequest username=\"PontisAdmin\" password=\"pass\" service=\"CsrApiService\" operation=\"getExperienceFullDetails\" instance=\"CsrGetExperienceFullDetailsRequest\">\n<subscriberIdData instance=\"SubscriberId\">\n<subscriberId>022913504</subscriberId>\n<!--<profileTemplate>pldt_smart.setup#HomeSubscription</profileTemplate>-->\n<!--<profileTemplate>pldt_smart.setup#Account</profileTemplate>-->\n</subscriberIdData>\n</PontisRequest>\n"
+				},
+				"url": {
+					"raw": "http://10.122.104.26:8080/amdocs-digital-intelligence/newxml",
+					"protocol": "http",
+					"host": [
+						"10",
+						"122",
+						"104",
+						"26"
+					],
+					"port": "8080",
+					"path": [
+						"amdocs-digital-intelligence",
+						"newxml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADHPostpaidSubscriptionBillRebateSuccessEvent",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<PontisRequest username=\"{{u}}\" password=\"{{p}}\" service=\"PXAExternalService\" operation=\"runCommand\" instance=\"PXARunCommandRequest\">\r\n   <command instance=\"PXARunEventCommand\">\r\n      <request instance=\"ReportRequest\">\r\n                 <subscriberIdData instance=\"SubscriberId\">\r\n            <pontisId>PostpaidSubscription-639257097780_2018-09-16</pontisId>\r\n         </subscriberIdData>\r\n         <eventData instance=\"pldt_smart.setup:ADHPostpaidSubscriptionBillRebateSuccessEvent\"> \r\n     \t      <subscriptionKey>PostpaidSubscription-639257097780_2018-09-16</subscriptionKey>\r\n\t\t\t<transactionType>CHANGE BILL REBATES</transactionType>\r\n  <srCode>TECH190001</srCode>\r\n  <srSummuryNote>AIA Bill Rebate</srSummuryNote>\r\n  <srSummaryId>854282159</srSummaryId>\r\n  <areaCode>925</areaCode>\r\n  <mobileNo>7097780</mobileNo>\r\n  <itemCode>RCDISC12MP250</itemCode> \r\n\t\t      </eventData>\r\n    </request>\r\n    <recordArtifacts>true</recordArtifacts>\r\n  </command>\r\n</PontisRequest>"
+				},
+				"url": {
+					"raw": "http://{{server}}:8080/amdocs-digital-intelligence/newxml",
+					"protocol": "http",
+					"host": [
+						"{{server}}"
+					],
+					"port": "8080",
+					"path": [
+						"amdocs-digital-intelligence",
+						"newxml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PldtOptinEvent",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<PontisRequest username=\"{{u}}\" password=\"{{p}}\" service=\"PXAExternalService\" operation=\"runCommand\" instance=\"PXARunCommandRequest\">\r\n   <command instance=\"PXARunEventCommand\">\r\n      <request instance=\"ReportRequest\">\r\n         <subscriberIdData instance=\"SubscriberId\">\r\n         \t<subscriberId>639481097481</subscriberId>\r\n               </subscriberIdData>\r\n               <eventData instance=\"pldt_smart.setup:PrepaidPldtOptinEvent\">\r\n\t\t\t\t\t<optInCode>FREE SMS</optInCode>\r\n               </eventData>\r\n       </request>\r\n     </command>\r\n</PontisRequest> \r\n\r\n\r\n\r\n"
+				},
+				"url": {
+					"raw": "http://{{server}}:8080/amdocs-digital-intelligence/newxml",
+					"protocol": "http",
+					"host": [
+						"{{server}}"
+					],
+					"port": "8080",
+					"path": [
+						"amdocs-digital-intelligence",
+						"newxml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADHPostpaidSubscriptionDataThresholdLimit",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<PontisRequest username=\"{{u}}\" password=\"{{p}}\" service=\"PXAExternalService\" operation=\"runCommand\" instance=\"PXARunCommandRequest\">\r\n   <command instance=\"PXARunEventCommand\">\r\n      <request instance=\"ReportRequest\">\r\n                 <subscriberIdData instance=\"SubscriberId\">\r\n            <pontisId>PostpaidSubscription-639257097780_2018-09-16</pontisId>\r\n         </subscriberIdData>\r\n         <eventData instance=\"pldt_smart.setup:ADHPostpaidSubscriptionBillRebateSuccessEvent\"> \r\n     \t      <subscriptionKey>PostpaidSubscription-639257097780_2018-09-16</subscriptionKey>\r\n\t\t\t<transactionType>CHANGE BILL REBATES</transactionType>\r\n  <srCode>TECH190001</srCode>\r\n  <srSummuryNote>AIA Bill Rebate</srSummuryNote>\r\n  <srSummaryId>854282159</srSummaryId>\r\n  <areaCode>925</areaCode>\r\n  <mobileNo>7097780</mobileNo>\r\n  <itemCode>RCDISC12MP250</itemCode> \r\n\t\t      </eventData>\r\n    </request>\r\n    <recordArtifacts>true</recordArtifacts>\r\n  </command>\r\n</PontisRequest>"
+				},
+				"url": {
+					"raw": "http://{{server}}:8080/amdocs-digital-intelligence/newxml",
+					"protocol": "http",
+					"host": [
+						"{{server}}"
+					],
+					"port": "8080",
+					"path": [
+						"amdocs-digital-intelligence",
+						"newxml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADHPostpaidSubscriptionOutageEvent",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<PontisRequest username=\"{{u}}\" password=\"{{p}}\" service=\"PXAExternalService\" operation=\"runCommand\" instance=\"PXARunCommandRequest\">\r\n   <command instance=\"PXARunEventCommand\">\r\n      <request instance=\"ReportRequest\">\r\n\t\t<subscriberIdData instance=\"SubscriberId\">\r\n\t\t\t<subscriberId>639990976261</subscriberId>\r\n        </subscriberIdData>\r\n        <eventData instance=\"pldt_smart.setup:ADHPostpaidSubscriptionOutageEvent\"> <eventTime>2020-06-09T23:39:50</eventTime>\r\n\t\t\t<area>Some parts of SURIGAO DEL SUR (CANTILAN, MADRID, TAGO)</area>\r\n\t\t\t<!--<brands>AUTO_VALUE</brands>-->\r\n\t\t\t<duration>0.0</duration>\r\n\t\t\t<endDate>2020-06-10T02:39:50</endDate>\r\n\t\t\t<outageId>1234</outageId>\r\n\t\t\t<severity>2</severity>\r\n\t\t\t<services>Data, Calls, SMS</services>\r\n\t\t\t<startDate>2020-06-09T23:39:50</startDate>\r\n\t\t\t<status>OPEN</status>\r\n\t\t</eventData>\r\n    </request>\r\n  </command>\r\n</PontisRequest>"
+				},
+				"url": {
+					"raw": "http://{{server}}:8080/amdocs-digital-intelligence/newxml",
+					"protocol": "http",
+					"host": [
+						"{{server}}"
+					],
+					"port": "8080",
+					"path": [
+						"amdocs-digital-intelligence",
+						"newxml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADHPostpaidSubscriptionConsentChangeEvent",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<PontisRequest username=\"{{u}}\" password=\"{{p}}\" service=\"PXAExternalService\" operation=\"runCommand\" instance=\"PXARunCommandRequest\">\r\n   <command instance=\"PXARunEventCommand\">\r\n      <request instance=\"ReportRequest\">\r\n\t\t<subscriberIdData instance=\"SubscriberId\">\r\n\t\t\t<subscriberId>639990976261</subscriberId>\r\n        </subscriberIdData>\r\n        <eventData instance=\"pldt_smart.setup:ADHPostpaidSubscriptionConsentChangeEvent\"> <eventTime>2020-06-09T23:39:50</eventTime>\r\n\t\t\t\t<consentSecCallToLandline>0</consentSecCallToLandline>\r\n\t\t\t\t<consentSecCallToMobile>0</consentSecCallToMobile>\r\n\t\t\t\t<consentSecEmail>0</consentSecEmail>\r\n\t\t\t\t<consentSecEnhUsgProf>0</consentSecEnhUsgProf>\r\n\t\t\t\t<consentSecShreUsgProf>0</consentSecShreUsgProf>\r\n\t\t\t\t<consentSecSms>0</consentSecSms>\r\n\t\t\t\t<consentSecThirdAds>0</consentSecThirdAds>\r\n\t\t\t\t<consentsecadvertisements>0</consentsecadvertisements>\r\n\t\t\t\t<consentseccreditscoring>0</consentseccreditscoring>\r\n\t\t\t\t<consentsecprofiling>0</consentsecprofiling>\r\n\t\t\t\t<consentsecthirdparty>0</consentsecthirdparty>\r\n\t\t\t\t<consentuniversal>0</consentuniversal>\r\n\t\t</eventData>\r\n    </request>\r\n  </command>\r\n</PontisRequest>\r\n\r\n"
+				},
+				"url": {
+					"raw": "http://{{server}}:8080/amdocs-digital-intelligence/newxml",
+					"protocol": "http",
+					"host": [
+						"{{server}}"
+					],
+					"port": "8080",
+					"path": [
+						"amdocs-digital-intelligence",
+						"newxml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADHPostpaidSubscriptionContact",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<PontisRequest username=\"{{u}}\" password=\"{{p}}\" service=\"PXAExternalService\" operation=\"runCommand\" instance=\"PXARunCommandRequest\">\r\n   <command instance=\"PXARunEventCommand\">\r\n      <request instance=\"ReportRequest\">\r\n\t\t<subscriberIdData instance=\"SubscriberId\">\r\n\t\t\t<subscriberId>639990976261</subscriberId>\r\n        </subscriberIdData>\r\n        <eventData instance=\"pldt_smart.setup:ADHPostpaidSubscriptionContact\"> \r\n        \t<eventTime>2020-06-09T23:39:50</eventTime>\r\n\t\t\t<birthDate>2020-10-16T14:58:35</birthDate>\r\n\t\t\t<contactName>AUTO_VALUE</contactName>\r\n\t\t\t<emailAddress>AUTO_VALUE</emailAddress>\r\n\t\t\t<firstName>AUTO_VALUE</firstName>\r\n\t\t\t<gender>AUTO_VALUE</gender>\r\n\t\t</eventData>\r\n    </request>\r\n  </command>\r\n</PontisRequest>\r\n\r\n"
+				},
+				"url": {
+					"raw": "http://{{server}}:8080/amdocs-digital-intelligence/newxml",
+					"protocol": "http",
+					"host": [
+						"{{server}}"
+					],
+					"port": "8080",
+					"path": [
+						"amdocs-digital-intelligence",
+						"newxml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADHPostpaidSubscriptionUREGRegistrationSuccessEvent",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<PontisRequest username=\"PontisAdmin\" password=\"pass\" service=\"PXAExternalService\" operation=\"runCommand\" instance=\"PXARunCommandRequest\">\r\n   <command instance=\"PXARunEventCommand\">\r\n      <request instance=\"ReportRequest\">\r\n         <subscriberIdData instance=\"SubscriberId\">\r\n         \t<subscriberId>639399229071</subscriberId>\r\n            <!--<pontisId>PrepaidSubscription-639983408863_2019-02-21 </pontisId>-->\r\n         </subscriberIdData>\r\n         <eventData instance=\"pldt_smart.setup:ADHPostpaidSubscriptionUREGRegistrationSuccessEvent\">\r\n          <promotionId>3115</promotionId>\r\n           <!-- <postpaidSubscriptionKey>AUTO_VALUE</postpaidSubscriptionKey>\r\n            <postpaidSubscriptionId>AUTO_VALUE</postpaidSubscriptionId>\r\n            <rrn>AUTO_VALUE</rrn>\r\n            <subsTypeId>0</subsTypeId>\r\n            <productId>AUTO_VALUE</productId>\r\n            <expirationDate>2018-08-08T09:34:38</expirationDate>\r\n            <planCode>AUTO_VALUE</planCode>\r\n            <uregResponseCode>AUTO_VALUE</uregResponseCode>\r\n            <locationId>AUTO_VALUE</locationId>\r\n            <cellId>AUTO_VALUE</cellId>\r\n            <channelID>AUTO_VALUE</channelID>-->\r\n         </eventData>\r\n      </request>\r\n      <recordArtifacts>true</recordArtifacts>\r\n   </command>\r\n</PontisRequest> "
+				},
+				"url": {
+					"raw": "http://{{server}}:8080/amdocs-digital-intelligence/newxml",
+					"protocol": "http",
+					"host": [
+						"{{server}}"
+					],
+					"port": "8080",
+					"path": [
+						"amdocs-digital-intelligence",
+						"newxml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADHPostpaidSubscription",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<PontisRequest username=\"{{u}}\" password=\"{{p}}\" service=\"PXAExternalService\" operation=\"runCommand\" instance=\"PXARunCommandRequest\">\r\n   <command instance=\"PXARunEventCommand\">\r\n      <request instance=\"ReportRequest\">\r\n         <subscriberIdData instance=\"SubscriberId\">\r\n         \t<pontisId>PostpaidSubscription-464352001_2019-01-21</pontisId>\r\n               </subscriberIdData>\r\n               <eventData instance=\"pldt_smart.setup:ADHPostpaidSubscription\">\r\n               <!--<postpaidSubscriptionId>9209561217</postpaidSubscriptionId>-->\r\n               <!--<doNotCallTag>NO</doNotCallTag>-->\r\n               <subscriberId>464352001</subscriberId>\r\n               <postpaidSubscriptionId></postpaidSubscriptionId>\r\n              <!--<subscriberFirstName>ELA</subscriberFirstName>-->\r\n               <!--<accountId>1007236</accountId>-->\r\n        \t   <!--<accountKey>Account-1007236</accountKey>-->\r\n               </eventData>\r\n       </request>\r\n     </command>\r\n</PontisRequest>\r\n"
+				},
+				"url": {
+					"raw": "http://{{server}}:8080/amdocs-digital-intelligence/newxml",
+					"protocol": "http",
+					"host": [
+						"{{server}}"
+					],
+					"port": "8080",
+					"path": [
+						"amdocs-digital-intelligence",
+						"newxml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADHSaleSREventDynamicComposite",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<PontisRequest username=\"{{u}}\" password=\"{{p}}\" service=\"PXAExternalService\" operation=\"runCommand\" instance=\"PXARunCommandRequest\">\r\n   <command instance=\"PXARunEventCommand\">\r\n      <request instance=\"ReportRequest\">\r\n         <subscriberIdData instance=\"SubscriberId\">\r\n         \t<pontisId>PostpaidSubscription-464352001_2019-01-21</pontisId>\r\n               </subscriberIdData>\r\n               <eventData instance=\"pldt_smart.setup:ADHPostpaidSubscription\">\r\n               <!--<postpaidSubscriptionId>9209561217</postpaidSubscriptionId>-->\r\n               <!--<doNotCallTag>NO</doNotCallTag>-->\r\n               <subscriberId>464352001</subscriberId>\r\n               <postpaidSubscriptionId></postpaidSubscriptionId>\r\n              <!--<subscriberFirstName>ELA</subscriberFirstName>-->\r\n               <!--<accountId>1007236</accountId>-->\r\n        \t   <!--<accountKey>Account-1007236</accountKey>-->\r\n               </eventData>\r\n       </request>\r\n     </command>\r\n</PontisRequest>\r\n"
+				},
+				"url": {
+					"raw": "http://{{server}}:8080/amdocs-digital-intelligence/newxml",
+					"protocol": "http",
+					"host": [
+						"{{server}}"
+					],
+					"port": "8080",
+					"path": [
+						"amdocs-digital-intelligence",
+						"newxml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "StartExperienceEvent",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<PontisRequest username=\"{{u}}\" password=\"{{p}}\" service=\"GenEventProcessingService\" operation=\"report\" instance=\"ReportRequest\">\r\n     <subscriberIdData instance=\"SubscriberId\">\r\n<!--<subscriberId>639990976261</subscriberId>-->\r\n<!--<profileTemplate>pldt_smart.setup#HomeSubscription</profileTemplate>!-->\r\n<subscriberId>639479946848</subscriberId>\r\n     </subscriberIdData>\r\n     <eventData instance=\"StartExperienceEvent\">\r\n          <targetingSource>Inbound</targetingSource>\r\n          <experience>Elaine_Optin</experience>\r\n          <!--<experienceInstance>HM_Tech_Migration_009</experienceInstance>-->\r\n           <!--<experienceInstance2>Data2</experienceInstance>-->\r\n            <!--<experienceInstance3>Retention1</experienceInstance>-->\r\n     </eventData>\r\n</PontisRequest>"
+				},
+				"url": {
+					"raw": "http://{{server}}:8080/amdocs-digital-intelligence/newxml",
+					"protocol": "http",
+					"host": [
+						"{{server}}"
+					],
+					"port": "8080",
+					"path": [
+						"amdocs-digital-intelligence",
+						"newxml"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

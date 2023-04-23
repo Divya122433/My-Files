@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "32c37253-bed3-4390-a384-57ddc033b5e5",
+		"name": "ACCOUNT AND SUBSCRIPTION CREATION for SIT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ADHAccount",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<PontisRequest username=\"{{u}}\" password=\"{{p}}\" service=\"PXAExternalService\" operation=\"runCommand\" instance=\"PXARunCommandRequest\">\r\n   <command instance=\"PXARunEventCommand\">\r\n      <request instance=\"ReportRequest\">\r\n                 <subscriberIdData instance=\"SubscriberId\">\r\n            <pontisId>Account-0266051298</pontisId>\r\n         </subscriberIdData>\r\n         <eventData instance=\"pldt_smart.setup:ADHAccount\"> \r\n         <accountId>0266051298</accountId>\r\n         <!--<accountKey>Account-032114</accountKey>-->\r\n     \t<!--<email>paguioelaine12@gmail.com</email>-->\r\n     \t<uhwid>MBVisalda@smart.com.ph</uhwid>\r\n     \t \t<!--<subscriberId>63946236</subscriberId>-->\r\n\t\t  <emailAddress>merisha.buen@gmail.com</emailAddress>\r\n\t\t  <eStatementEmailAddress>paulo.advento@amdocs.com</eStatementEmailAddress>\r\n\t\t  <!--<cbrMobile>639392228525</cbrMobile>-->\r\n\t\t  <!--<accountActivationDate>2018-12-27T11:56:57</accountActivationDate>-->\r\n\t\t  <!--<billingFirstName>Ela1</billingFirstName>-->\r\n\t\t  <!--<billingLastName>Paguio1</billingLastName>-->\r\n\t\t  <!--<billingMiddleName>Edrad1</billingMiddleName>-->\r\n\t\t  <!--<lastStartExperienceDate></lastStartExperienceDate>-->\r\n\t\t    <!--<primaryTelNo>226646</primaryTelNo>-->\r\n\t\t      </eventData>\r\n    </request>\r\n    <recordArtifacts>true</recordArtifacts>\r\n  </command>\r\n</PontisRequest> "
+				},
+				"url": {
+					"raw": "https://{{server}}:8443/amdocs-digital-intelligence/newxml",
+					"protocol": "https",
+					"host": [
+						"{{server}}"
+					],
+					"port": "8443",
+					"path": [
+						"amdocs-digital-intelligence",
+						"newxml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADHPostpaidSubscription",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<PontisRequest username=\"{{u}}\" password=\"{{p}}\" service=\"PXAExternalService\" operation=\"runCommand\" instance=\"PXARunCommandRequest\">\r\n     <command instance=\"PXARunEventCommand\">\r\n          <request instance=\"ReportRequest\">\r\n                <!--<requestTime>2018-08-20T00:00:00</requestTime-->\r\n<subscriberIdData instance=\"SubscriberId\">\r\n        <subscriberId>639399229072</subscriberId>\r\n    \t<!--<pontisId>PostpaidSubscription-639399229071_2018-09-28</pontisId>-->\r\n</subscriberIdData>\r\n<eventData instance=\"ADHPostpaidSubscription\">\r\n  <!--<eventTime>2018-05-01T00:00:01</eventTime>-->\r\n  <!--<postpaidSubscriptionId>639999956698</postpaidSubscriptionId>-->\r\n  <!--<activationDate>2019-02-20T00:00:00</activationDate>    -->\r\n  <accountId>100792588471</accountId>\r\n  <pricePlanType>REVAMP</pricePlanType>\r\n  <!--<cspSubscriberStatus>Active</cspSubscriberStatus> -->\r\n  <!--<billingCycleDay>5</billingCycleDay>-->\r\n  <!--<contractLength>24</contractLength>-->\r\n  <pricePlan>REVAMP CONSUMABLE PLAN 500 MG</pricePlan>\r\n  <brand>Smart Postpaid</brand>\r\n  <!--<isActive>true</isActive>-->\r\n  <!--<msf>600.0</msf>-->\r\n  <!--<subscriberFirstName>Michell</subscriberFirstName>-->\r\n  <!--<subscriberMiddleName>Luy</subscriberMiddleName>-->\r\n  <!--<subscriberLastName>Peppa</subscriberLastName>-->\r\n  <!--<predictivePreferredTimeofDay>AUTO_VALUE</predictivePreferredTimeofDay>-->\r\n  <!--<productWalletDetails>AUTO_VALUE</productWalletDetails>-->\r\n  <!--<propensityToBuy>AUTO_VALUE</propensityToBuy>-->\r\n  <!--<propensityToEngage>AUTO_VALUE</propensityToEngage>-->\r\n  <!--<psychologyProfile>AUTO_VALUE</psychologyProfile>-->\r\n  <!--<ptfAmount>0.0</ptfAmount>-->\r\n  <!--<registrationDateToLoyaltyPlatform>2018-10-04T18:52:09</registrationDateToLoyaltyPlatform>-->\r\n  <!--<registrationDateToMobileapp>2018-10-04T18:52:09</registrationDateToMobileapp>-->\r\n  <!--<registrationPlaceholder1>AUTO_VALUE</registrationPlaceholder1>-->\r\n  <!--<registrationPlaceholder2>AUTO_VALUE</registrationPlaceholder2>-->\r\n  <!--<registrationPlaceholder3>AUTO_VALUE</registrationPlaceholder3>-->\r\n  <!--<registrationToFinteq>AUTO_VALUE</registrationToFinteq>-->\r\n  <!--<registrationToLendr>AUTO_VALUE</registrationToLendr>-->\r\n  <!--<registrationToPaymara>AUTO_VALUE</registrationToPaymara>-->\r\n  <!--<roamerType>AUTO_VALUE</roamerType>-->\r\n  <!--<roamingDataVolumeMonthlyAverage>0</roamingDataVolumeMonthlyAverage>-->\r\n  <!--<roamingSMSEventsMonthlyAverage>0</roamingSMSEventsMonthlyAverage>-->\r\n  <!--<roamingSpendLastBillingCycle>0</roamingSpendLastBillingCycle>-->\r\n  <!--<roamingVoiceDurationMonthlyAverage>0</roamingVoiceDurationMonthlyAverage>-->\r\n  <!--<selfServiceChannelID>AUTO_VALUE</selfServiceChannelID>-->\r\n  <!--<simLTEType>AUTO_VALUE</simLTEType>-->\r\n  <!--<slcState>AUTO_VALUE</slcState>-->\r\n  <!--<source>AUTO_VALUE</source>-->\r\n  <!--<subBrand>AUTO_VALUE</subBrand>-->\r\n  <!--<subscriberDisconnectionReason>AUTO_VALUE</subscriberDisconnectionReason>-->\r\n  <!--<subscriberStarRating>AUTO_VALUE</subscriberStarRating>-->\r\n  <!--<subscribersPreviousState>AUTO_VALUE</subscribersPreviousState>-->\r\n  <!--<suspendEndDate>2018-10-04T18:52:09</suspendEndDate>-->\r\n  <!--<taggingStatus>0</taggingStatus>-->\r\n  <!--<textOrVoiceMonthlyAddonregistrations>AUTO_VALUE</textOrVoiceMonthlyAddonregistrations>-->\r\n  <!--<ucgExclusion>AUTO_VALUE</ucgExclusion>-->\r\n  <!--<vasCategory>AUTO_VALUE</vasCategory>-->\r\n  <!--<vasSpendLastBillingCycle>0</vasSpendLastBillingCycle>-->\r\n  <!--<vasSpendLastThreeMonths>0</vasSpendLastThreeMonths>-->\r\n  <!--<vipTag>AUTO_VALUE</vipTag>-->\r\n  <!--<voiceClass>AUTO_VALUE</voiceClass>-->\r\n  <!--<wiFiRegistrationDate>2018-10-04T18:52:09</wiFiRegistrationDate-->\r\n</eventData>\r\n     </request>\r\n     </command>\r\n</PontisRequest>\r\n"
+				},
+				"url": {
+					"raw": "https://{{server}}:8443/amdocs-digital-intelligence/newxml",
+					"protocol": "https",
+					"host": [
+						"{{server}}"
+					],
+					"port": "8443",
+					"path": [
+						"amdocs-digital-intelligence",
+						"newxml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADHPostpaidSubscription - PricePlan Change Event",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<PontisRequest username=\"{{u}}\" password=\"{{p}}\" service=\"PXAExternalService\" operation=\"runCommand\" instance=\"PXARunCommandRequest\">\r\n     <command instance=\"PXARunEventCommand\">\r\n          <request instance=\"ReportRequest\">\r\n<subscriberIdData instance=\"SubscriberId\">\r\n        <subscriberId>639399229071</subscriberId>\r\n    \t</subscriberIdData>\r\n<eventData instance=\"ADHPostpaidSubscription\">\r\n  <accountKey>Account-100792588471</accountKey>\r\n  <pricePlan>Smart Signature - Plan Lite</pricePlan>\r\n</eventData>\r\n     </request>\r\n     </command>\r\n</PontisRequest>\r\n"
+				},
+				"url": {
+					"raw": "https://{{server}}:8443/amdocs-digital-intelligence/newxml",
+					"protocol": "https",
+					"host": [
+						"{{server}}"
+					],
+					"port": "8443",
+					"path": [
+						"amdocs-digital-intelligence",
+						"newxml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADHHomeSubscription",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<PontisRequest username=\"{{u}}\" password=\"{{p}}\" service=\"PXAExternalService\" operation=\"runCommand\" instance=\"PXARunCommandRequest\">\r\n     <command instance=\"PXARunEventCommand\">\r\n          <request instance=\"ReportRequest\">\r\n     <subscriberIdData instance=\"SubscriberId\">\r\n          <!--<subscriberId>63454311191</subscriberId>-->\r\n           <pontisId>HomeSubscription-63454311191_2018-10-12</pontisId>\r\n         <!-- <!63923506051; 63923506052-->\r\n     </subscriberIdData>\r\n     <eventData instance=\"ADHHomeSubscription\">\r\n                  <!--<eventTime>2018-05-01T00:00:01</eventTime>-->\r\n                 <homeSubscriptionId>6345431191</homeSubscriptionId>\r\n                  \r\n                  <activationDate>2018-10-12T14:59:47</activationDate>\r\n                  <!--<accountId>100010113</accountId>-->\r\n                  \r\n                  <accountID>454311191</accountID>\r\n                <accountKey>Account-454311191</accountKey>\r\n                  \r\n                  <serviceStatus>Active</serviceStatus>\r\n\t\t\t\t  <serviceTypeCategory>Voice</serviceTypeCategory>\r\n                  <serviceTypeName>Home VOIP</serviceTypeName>\r\n                  <billingStatus>Active</billingStatus>\r\n  <brandOfDevicesUsed>partner</brandOfDevicesUsed>\r\n  <cALLSTOGLOBEMOBILE>10</cALLSTOGLOBEMOBILE>\r\n  <cALLSTOGLOBEMOBILEAMT>20</cALLSTOGLOBEMOBILEAMT>\r\n  <cALLSTOGLOBEMOBILEDUR>30</cALLSTOGLOBEMOBILEDUR>\r\n  <cALLSTOSMART>40</cALLSTOSMART>\r\n  <cALLSTOSMARTAMT>50</cALLSTOSMARTAMT>\r\n  <cALLSTOSMARTDUR>60</cALLSTOSMARTDUR>\r\n  <cALLSTOSUN>70</cALLSTOSUN>\r\n  <cALLSTOSUNAMT>80</cALLSTOSUNAMT>\r\n  <cALLSTOSUNDUR>90</cALLSTOSUNDUR>\r\n  <cALLSTOTNT>100</cALLSTOTNT>\r\n  <cALLSTOTNTAMT>200</cALLSTOTNTAMT>\r\n  <cALLSTOTNTDUR>110</cALLSTOTNTDUR>\r\n  <clarityIdCID>clarityIdCID1</clarityIdCID>\r\n  <customerExperienceIndex>customerExperienceIndex1</customerExperienceIndex>\r\n  <dataConsumptionTypesByFrequency>dataConsumptionTypesByFrequency1</dataConsumptionTypesByFrequency>\r\n  <dataConsumptionTypesByVolume>dataConsumptionTypesByVolume1</dataConsumptionTypesByVolume>\r\n  <dataUsageDownload30daysGB>1.0</dataUsageDownload30daysGB>\r\n  <dataUsageDownloadAvg3MrollingGB>2.0</dataUsageDownloadAvg3MrollingGB>\r\n  <dataUsageDownloadLastMonthGB>3.0</dataUsageDownloadLastMonthGB>\r\n  <dataUsageDownloadSegment3monthAVG>dataUsageDownloadSegment3monthAVG1</dataUsageDownloadSegment3monthAVG>\r\n  <dataUsageDurationDownload1Month>4.0</dataUsageDurationDownload1Month>\r\n  <dataUsageDurationUpload1Month>5.0</dataUsageDurationUpload1Month>\r\n  <dataUsageUpload30daysGB>6.0</dataUsageUpload30daysGB>\r\n  <dataUsageUpload3MonthAVG>7.0</dataUsageUpload3MonthAVG>\r\n  <dataUsageUploadLastMonthGB>8.0</dataUsageUploadLastMonthGB>\r\n  <!--<devicesUsed>AUTO_VALUE</devicesUsed>-->\r\n  <!--<eventCreationTime>2018-10-11T14:59:47</eventCreationTime>-->\r\n  <exchangeCodeEXCDE>exchangeCodeEXCDE1</exchangeCodeEXCDE>\r\n  <facilityModernizationPrioritization>facilityModernizationPrioritization1</facilityModernizationPrioritization>\r\n  <fdlteFacilityAvailability>fdlteFacilityAvailability1</fdlteFacilityAvailability>\r\n  <fdlteFacilityUtilization>fdlteFacilityUtilization1</fdlteFacilityUtilization>\r\n  <filename>filename_20181025_3</filename>\r\n  <fiveGFacilityAvailability>fiveGFacilityAvailability1</fiveGFacilityAvailability>\r\n  <fiveGFacilityUtilization>fiveGFacilityUtilization1</fiveGFacilityUtilization>\r\n  <iDDCALLAMOUNT>9</iDDCALLAMOUNT>\r\n  <iDDCALLSCOUNT>10</iDDCALLSCOUNT>\r\n  <iDDCAPABILITYSTATUS>Active</iDDCAPABILITYSTATUS>\r\n  <iDDCOUNTRYDESTINATION>Israel</iDDCOUNTRYDESTINATION>\r\n  <isActive>true</isActive>\r\n  <lineCapability>11.0</lineCapability>\r\n  <localCallDistinctCalledNumbers>12.0</localCallDistinctCalledNumbers>\r\n  <localCallDuration>0.0</localCallDuration>\r\n  <localCallsCount>0.0</localCallsCount>\r\n  <modemType>modemType1</modemType>\r\n  <nATIONALTOLLOFFNETAMOUNT>10</nATIONALTOLLOFFNETAMOUNT>\r\n  <nDDCAPABILITYSTATUS>Active</nDDCAPABILITYSTATUS>\r\n  <napOverlapAvailable>10.0</napOverlapAvailable>\r\n  <napOverlapCount>napOverlapCount1</napOverlapCount>\r\n  <nextPlanUpgrade>nextPlanUpgrade1</nextPlanUpgrade>\r\n  <nodeModel>nodeModel1</nodeModel>\r\n  <nodeNameNapIdBtsId>Copper/FTTH/Wireless</nodeNameNapIdBtsId>\r\n  <nodeTypeFacilityTechnology>WiMAX</nodeTypeFacilityTechnology>\r\n  <nscbCode>nscbCode1</nscbCode>\r\n  <oFFNETNDDCALLS>10</oFFNETNDDCALLS>\r\n  <oNNETNDDAMT>20</oNNETNDDAMT>\r\n  <oNNETNDDCALLS>30</oNNETNDDCALLS>\r\n  <openTicketFlag>true</openTicketFlag>\r\n  <paBarangay>paBarangay1</paBarangay>\r\n  <paBldg>paBldg1</paBldg>\r\n  <paCity>paCity1</paCity>\r\n  <paEstate>paEstate1</paEstate>\r\n  <paFloorNo>paFloorNo1</paFloorNo>\r\n  <paHouseNo>paHouseNo1</paHouseNo>\r\n  <paProvince>paProvince1</paProvince>\r\n  <paStreetName>paStreetName1</paStreetName>\r\n  <paUnitNo>paUnitNo1</paUnitNo>\r\n  <passionPoints>passionPoints1</passionPoints>\r\n  <phyAddress>phyAddress1</phyAddress>\r\n  <planSpeed>10.0</planSpeed>\r\n  <postalCode>postalCode1</postalCode>\r\n  <premiereLocationFlag>true</premiereLocationFlag>\r\n  <provisionedSpeed>20.0</provisionedSpeed>\r\n  <sMSVOLUME>30</sMSVOLUME>\r\n  \r\n  <source>source1</source>\r\n  <subscriberType>Home</subscriberType>\r\n  \r\n  <tOPUPPACKAGE>tOPUPPACKAGE1</tOPUPPACKAGE>\r\n  <ticketsAmount>30.0</ticketsAmount>\r\n   \r\n </eventData>\r\n     </request>\r\n     </command>\r\n</PontisRequest>"
+				},
+				"url": {
+					"raw": "https://{{server}}:8443/amdocs-digital-intelligence/newxml",
+					"protocol": "https",
+					"host": [
+						"{{server}}"
+					],
+					"port": "8443",
+					"path": [
+						"amdocs-digital-intelligence",
+						"newxml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADHPrepaidSubscription",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<PontisRequest username=\"{{u}}\" password=\"{{p}}\" service=\"PXAExternalService\" operation=\"runCommand\" instance=\"PXARunCommandRequest\">\r\n   <command instance=\"PXARunEventCommand\">\r\n      <request instance=\"ReportRequest\">\r\n         <subscriberIdData instance=\"SubscriberId\">\r\n         \t<pontisId>PrepaidSubscription-639297400829_2019-04-03</pontisId>\r\n               </subscriberIdData>\r\n               <eventData instance=\"pldt_smart.setup:ADHPrepaidSubscription\">\r\n                           <!--<doNotCallTag>NO</doNotCallTag>-->\r\n               <!--<subscriberId>639983408863</subscriberId>-->\r\n                <prepaidSubscriptionId>639297400829</prepaidSubscriptionId>\r\n                <brand>Smart Prepaid</brand>\r\n               <!-- <prepaidBrand>Smart Prepaid</prepaidBrand>-->\r\n                <activationDate>2019-04-03T16:31:16</activationDate>\r\n                <slcState>Call Barring</slcState>\r\n                <isActive>true</isActive>\r\n               <!--<subscriberFirstName>ELA</subscriberFirstName>-->\r\n               <!--<accountId>1007236</accountId>-->\r\n        \t   <!--<accountKey>Account-1007236</accountKey>-->\r\n        \t   <!--<prepaidAverageARPU>100</prepaidAverageARPU>-->\r\n        \t   <!--<emailAddress>paguioelaine12@gmail.com</emailAddress>-->\r\n               </eventData>\r\n       </request>\r\n     </command>\r\n</PontisRequest>\r\n"
+				},
+				"url": {
+					"raw": "https://{{server}}:8443/amdocs-digital-intelligence/newxml",
+					"protocol": "https",
+					"host": [
+						"{{server}}"
+					],
+					"port": "8443",
+					"path": [
+						"amdocs-digital-intelligence",
+						"newxml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADHPrepaidSubscriptionTopupEvent",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<PontisRequest username=\"{{u}}\" password=\"{{p}}\" service=\"PXAExternalService\" operation=\"runCommand\" instance=\"PXARunCommandRequest\">\r\n   <command instance=\"PXARunEventCommand\">\r\n      <request instance=\"ReportRequest\">\r\n         <subscriberIdData instance=\"SubscriberId\">\r\n         \t<!--<pontisId>PrepaidSubscription-639334728709_2020-10-12</pontisId>-->\r\n               </subscriberIdData>\r\n               <eventData instance=\"pldt_smart.setup:ADHPrepaidSubscription\">\r\n                           <!--<doNotCallTag>NO</doNotCallTag>-->\r\n                <subscriberId>639334728709</subscriberId>\r\n                <!--<prepaidSubscriptionId>639334728709</prepaidSubscriptionId>-->\r\n                <!--<brand>Smart Prepaid</brand>-->\r\n                <!-- <prepaidBrand>Smart Prepaid</prepaidBrand>-->\r\n                <!--<activationDate>2019-04-03T16:31:16</activationDate>-->\r\n                <!--<slcState>Call Barring</slcState>-->\r\n                <isActive>true</isActive>\r\n                <!--<subscriberFirstName>ELA</subscriberFirstName>-->\r\n                <!--<accountId>1007236</accountId>-->\r\n        \t    <!--<accountKey>Account-1007236</accountKey>-->\r\n        \t    <!--<prepaidAverageARPU>100</prepaidAverageARPU>-->\r\n        \t    <!--<emailAddress>paguioelaine12@gmail.com</emailAddress>-->\r\n               </eventData>\r\n       </request>\r\n     </command>\r\n</PontisRequest>\r\n"
+				},
+				"url": {
+					"raw": "https://{{server}}:8443/amdocs-digital-intelligence/newxml",
+					"protocol": "https",
+					"host": [
+						"{{server}}"
+					],
+					"port": "8443",
+					"path": [
+						"amdocs-digital-intelligence",
+						"newxml"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "af9d05bb-aae3-439a-ae90-1aa4a69069af",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "efeccf61-1cc0-4e8e-9bf8-febb5cb14a9a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
